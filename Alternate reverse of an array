@@ -1,0 +1,35 @@
+//alternate reverse an array 
+#include<bits/stdc++.h>
+using namespace std;
+
+// print array 
+void print_array(int arr[], int n){
+    for (int i=0;i<n;i++)
+        cout << arr[i]<<"  ";
+    cout<<endl;
+}
+
+//swap function
+void swap (int *a, int *b){
+    int temp;
+    temp = *a;
+    *a = *b ;
+    *b = temp;
+}
+
+// reverse function 
+void alternate_reverse(int arr[], int n) {
+    int i, j;
+    for(i=0, j=1; i<n-1, j<n; i++, j++){
+        swap(arr[i], arr[j]);
+        i++; j++;
+    }
+}
+
+int main() {
+    int arr[] = {44, 45, 53, 61, 72, 84, 92};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    print_array(arr, n);
+    alternate_reverse(arr, n-1);
+    print_array(arr, n);
+}
