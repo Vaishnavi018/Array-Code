@@ -1,0 +1,28 @@
+// binary search
+#include<bits/stdc++.h>
+using namespace std;
+
+//binary search
+int search(int arr[],int start, int end , int key){
+    
+    if(start <= end)
+    {int mid = start + ( end - start)/2;
+    if (arr[mid] = key)
+        return mid;
+    else if(arr[mid]< key)
+        search(arr, start, mid-1, key);
+    else 
+        search(arr, mid+1, end, key);}
+    
+    return -1;
+}
+
+int main() {
+    int arr[] = {44, 45, 53, 61, 72, 84, 92};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 61;
+    int k = search(arr,0, n-1, key);
+    if (k == -1) 
+        cout<< "not present";
+    cout << k;
+}
